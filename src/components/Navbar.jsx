@@ -20,7 +20,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className=" bg-[#0C0D10] p-5">
+    <div className=" bg-[#0C0D10] p-5 mb-10">
       <div className="navbar  shadow-sm container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -50,7 +50,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex gap-2">
-            <Image src={Logo} alt="Logo Image" width={28} height={28}></Image>
+            <Image src={Logo} alt="Logo Image" width={20} height={20}></Image>
             <Link href="/home" className="btn btn-ghost text-2xl">
               FITLOG
             </Link>
