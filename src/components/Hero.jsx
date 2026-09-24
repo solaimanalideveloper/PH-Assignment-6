@@ -9,7 +9,7 @@ const Hero = () => {
         <div>
           <p className="text-[#C2F800] font-semibold mb-5">WORKOUT LIBRARY</p>
           <h1 className="text-[#FFFFFF] font-bold text-6xl md:text-6xl tracking-tight mb-5">
-            TRAIN WITH INTENT. <span class="block">EVERY SET.</span>
+            TRAIN WITH INTENT. <span className="block">EVERY SET.</span>
           </h1>
           <p className="text-[#9CA3AF] mb-5">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it{" "}
