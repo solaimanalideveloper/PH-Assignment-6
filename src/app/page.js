@@ -4,7 +4,7 @@ import LibrarySection from "@/components/LibrarySection";
 export default async function Home() {
   const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
   const workoutCardData = await res.json();
-  // console.log(data);
+
   return (
     <div className="bg-[#000000]">
       <div className="container mx-auto">

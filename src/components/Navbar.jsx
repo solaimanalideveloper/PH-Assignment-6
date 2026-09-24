@@ -12,7 +12,7 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link href="/home" className="text-[#D1D5DB]">
+        <Link href="/workout/id" className="text-[#D1D5DB]">
           My Plan
         </Link>
       </li>
