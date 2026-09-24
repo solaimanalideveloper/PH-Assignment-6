@@ -6,7 +6,6 @@ export default function Home() {
     <div className="bg-[#000000]">
       <div className="container mx-auto">
         <Hero></Hero>
-        hello bangladesh
       </div>
     </div>
   );
