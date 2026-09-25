@@ -7,7 +7,7 @@ const Navbar = () => {
   const link = (
     <>
       <li>
-        <Link href="/home" className="text-[#D1D5DB]">
+        <Link href="/" className="text-[#D1D5DB]">
           Workouts
         </Link>
       </li>
@@ -51,7 +51,7 @@ const Navbar = () => {
           </div>
           <div className="flex gap-2">
             <Image src={Logo} alt="Logo Image" width={25} height={25}></Image>
-            <Link href="/home" className="btn btn-ghost text-2xl">
+            <Link href="/" className="btn btn-ghost text-2xl">
               FITLOG
             </Link>
           </div>
