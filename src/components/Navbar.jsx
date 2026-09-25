@@ -12,7 +12,7 @@ const Navbar = () => {
         </Link>
       </li>
       <li>
-        <Link href="/workout/id" className="text-[#D1D5DB]">
+        <Link href="/my-plan" className="text-[#D1D5DB]">
           My Plan
         </Link>
       </li>
@@ -50,7 +50,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex gap-2">
-            <Image src={Logo} alt="Logo Image" width={20} height={20}></Image>
+            <Image src={Logo} alt="Logo Image" width={25} height={25}></Image>
             <Link href="/home" className="btn btn-ghost text-2xl">
               FITLOG
             </Link>
@@ -60,18 +60,18 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end flex gap-5">
-          <a className="text-[#9CA3AF] btn">
+          <Link href="/my-plan" className="text-[#9CA3AF] btn">
             Plan{" "}
             <span className="border p-1 px-2.5 border-[#2D313B] rounded-full ml-1 text-[#000000] bg-[#C2F800]">
               0
             </span>
-          </a>
-          <a className="text-[#9CA3AF] btn">
+          </Link>
+          <Link href="/my-plan" className="text-[#9CA3AF] btn">
             Saved{" "}
             <span className="border p-1 px-2.5 border-[#2D313B] rounded-full ml-1 text-[#D1D5DB]">
               0
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

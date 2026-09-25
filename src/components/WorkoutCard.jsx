@@ -1,13 +1,14 @@
 import Image from "next/image";
 import React from "react";
 import { Clock, Flame, Star } from "lucide-react";
+import Link from "next/link";
 
 const WorkoutCard = ({ workoutData }) => {
-  const { name, image, equipment, duration, caloriesBurned, rating } =
+  const { name, image, equipment, duration, caloriesBurned, rating, id } =
     workoutData;
 
   return (
-    <div>
+    <Link href={`/workout/${id}`} className="block">
       <div className="card bg-base-100 shadow-sm max-h-135">
         <figure>
           <Image
@@ -38,7 +39,7 @@ const WorkoutCard = ({ workoutData }) => {
               {duration} min
             </p>
             <p className="flex items-center gap-1">
-              <Flame size={16} className="text-[#9CA3AF] fill-[#9CA3AF]"/>
+              <Flame size={16} className="text-[#9CA3AF] fill-[#9CA3AF]" />
               {caloriesBurned} kcal
             </p>
             <p className="flex items-center gap-1">
@@ -48,7 +49,7 @@ const WorkoutCard = ({ workoutData }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
