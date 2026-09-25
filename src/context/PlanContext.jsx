@@ -1,8 +1,5 @@
 "use client";
 
-
-// export default PlanContext;
-// src/context/PlanContext.jsx
 import { createContext, useContext, useState, useEffect } from "react";
 
 const PlanContext = createContext();
@@ -12,7 +9,6 @@ export const PlanProvider = ({ children }) => {
   const [savedItems, setSavedItems] = useState([]);
   const [hydrated, setHydrated] = useState(false);
 
-  // ⬇️ পেজ লোড হলে localStorage থেকে ডেটা তুলে আনা
   useEffect(() => {
     const p = JSON.parse(localStorage.getItem("plan") || "[]");
     const s = JSON.parse(localStorage.getItem("saved") || "[]");
@@ -21,7 +17,6 @@ export const PlanProvider = ({ children }) => {
     setHydrated(true);
   }, []);
 
-  // ⬇️ কোনো change হলেই localStorage এ save
   useEffect(() => {
     if (hydrated) localStorage.setItem("plan", JSON.stringify(planItems));
   }, [planItems, hydrated]);

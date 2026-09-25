@@ -49,5 +49,3 @@ const WorkoutActions = ({ workout }) => {
 };
 
 export default WorkoutActions;
-
-// export default function WorkoutActions({ workout }) {}

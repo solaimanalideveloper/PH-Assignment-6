@@ -48,20 +48,28 @@ const PlanCard = ({ workout, listType }) => {
       <div className="flex gap-2">
         <Link
           href={`/workout/${workout.id}`}
-          className="px-3 py-2 border rounded-md text-sm"
+          className="px-3 py-2 border rounded-3xl text-sm"
         >
           View Details
         </Link>
         {listType === "today" && (
           <button
             onClick={handleDone}
-            className="p-2 bg-[#ccff00] text-black rounded-md"
+            className={
+              workout.done
+                ? "flex items-center gap-1 px-3 py-2 border bg-[#ccff00] text-black rounded-3xl text-sm cursor-pointer"
+                : "flex items-center gap-1 px-3 py-2 bg-[#ccff00] text-black rounded-3xl text-sm font-semibold cursor-pointer"
+            }
           >
             <Check size={16} />
+            {workout.done ? "Mark as Done" : "Mark as Done"}
           </button>
         )}
-        <button onClick={handleRemove} className="p-2 border rounded-md">
-          <X size={16} />
+        <button
+          onClick={handleRemove}
+          className="p-2 text-[#6B7280] cursor-pointer"
+        >
+          <X size={25} />
         </button>
       </div>
     </div>

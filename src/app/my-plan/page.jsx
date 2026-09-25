@@ -13,7 +13,7 @@ const MyPlanPage = () => {
   const [sortBy, setSortBy] = useState("Duration");
 
   const sortOptions = ["Duration", "Calories", "Rating"];
-  const currentList = activeTab === "today" ? planItems : savedItems; // 🆕
+  const currentList = activeTab === "today" ? planItems : savedItems;
 
   const metrics = [
     { label: "Exercises", value: planItems.length, highlight: true },
@@ -89,7 +89,7 @@ const MyPlanPage = () => {
             </button>
           </div>
 
-          <div className="relative flex items-center gap-2 text-[#8A92A0] text-sm">
+          <div className="relative flex items-center gap-2 text-[#8A92A0] text-sm ">
             <span>Sort By</span>
             <button
               onClick={() => setSortOpen(!sortOpen)}
