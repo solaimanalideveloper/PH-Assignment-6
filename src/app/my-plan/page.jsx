@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown, Check } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 const MyPlanPage = () => {
@@ -110,9 +111,9 @@ const MyPlanPage = () => {
           <p className="text-[#8A92A0] mt-2">
             Browse the library and add a lift to get today moving.
           </p>
-          <button className="bg-[#C2F800] text-black font-bold px-6 py-3 rounded-full mt-6">
+          <Link href="../" className="bg-[#C2F800] text-black font-bold px-6 py-3 rounded-full mt-6">
             Go to workouts
-          </button>
+          </Link>
         </div>
       </div>
     </div>
