@@ -1,9 +1,9 @@
 import Hero from "@/components/Hero";
 import LibrarySection from "@/components/LibrarySection";
+import { getAllWorkouts } from "@/lib/api";
 
-export default async function Home() {
-  const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
-  const workoutCardData = await res.json();
+export const Home = async () => {
+  const workoutCardData = await getAllWorkouts();
 
   return (
     <div className="bg-[#000000]">
@@ -13,4 +13,6 @@ export default async function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

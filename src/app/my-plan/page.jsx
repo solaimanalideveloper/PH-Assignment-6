@@ -3,19 +3,42 @@
 import { ChevronDown, Check } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { usePlan } from "@/context/PlanContext"; // 🆕
+import PlanCard from "@/components/PlanCard";
 
 const MyPlanPage = () => {
+  const { planItems, savedItems, hydrated } = usePlan();
   const [activeTab, setActiveTab] = useState("today");
   const [sortOpen, setSortOpen] = useState(false);
   const [sortBy, setSortBy] = useState("Duration");
 
+  const sortOptions = ["Duration", "Calories", "Rating"];
+  const currentList = activeTab === "today" ? planItems : savedItems; // 🆕
+
   const metrics = [
-    { label: "Exercises", value: 0, highlight: true },
-    { label: "Minutes", value: 0, highlight: false },
-    { label: "Calories", value: 0, highlight: false },
+    { label: "Exercises", value: planItems.length, highlight: true },
+    {
+      label: "Minutes",
+      value: planItems.reduce((sum, w) => sum + Number(w.duration), 0),
+      highlight: false,
+    },
+    {
+      label: "Calories",
+      value: planItems.reduce((sum, w) => sum + Number(w.caloriesBurned), 0),
+      highlight: false,
+    },
   ];
 
-  const sortOptions = ["Duration", "Calories", "Rating"];
+  const sortedList = [...currentList].sort((a, b) => {
+    const key =
+      sortBy.toLowerCase() === "calories"
+        ? "caloriesBurned"
+        : sortBy.toLowerCase();
+    return b[key] - a[key];
+  });
+
+  if (!hydrated)
+    return <p className="text-white text-center py-20">Loading workouts…</p>;
 
   return (
     <div className="bg-black min-h-screen">
@@ -104,17 +127,30 @@ const MyPlanPage = () => {
         </div>
 
         {/* Empty state */}
-        <div className="border border-dashed border-[#2A2A2A] rounded-lg mt-8 py-24 flex flex-col items-center text-center">
-          <h3 className="text-white font-bold uppercase text-xl">
-            Nothing here yet
-          </h3>
-          <p className="text-[#8A92A0] mt-2">
-            Browse the library and add a lift to get today moving.
-          </p>
-          <Link href="../" className="bg-[#C2F800] text-black font-bold px-6 py-3 rounded-full mt-6">
-            Go to workouts
-          </Link>
-        </div>
+        {sortedList.length === 0 ? (
+          <div className="text-center py-16">
+            <h2 className="text-white text-2xl font-bold">NOTHING HERE YET</h2>
+            <p className="text-[#9CA3AF] mt-2">
+              Browse the library and add a lift to get today moving.
+            </p>
+            <Link
+              href="/"
+              className="inline-block mt-6 bg-[#ccff00] text-black px-6 py-3 rounded-full font-bold"
+            >
+              Go to workouts
+            </Link>
+          </div>
+        ) : (
+          <div className="space-y-4 mt-6">
+            {sortedList.map((workout) => (
+              <PlanCard
+                key={workout.id}
+                workout={workout}
+                listType={activeTab}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { CalendarPlus, Bookmark } from "lucide-react";
+import WorkoutActions from "@/components/WorkoutActions";
 
 const WorkoutDetailPage = async ({ params }) => {
   const { id } = await params;
 
   const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
   const workoutData = await res.json();
-  
+
   const {
     name,
     image,
@@ -99,14 +99,7 @@ const WorkoutDetailPage = async ({ params }) => {
                 </div>
               }
 
-              <div className="mt-8 flex gap-4">
-                <button className="btn bg-[#CCFF00] text-[#0F1115]">
-                  <CalendarPlus size={18}></CalendarPlus> Add to today`s plan
-                </button>
-                <button className="btn bg-[#374151] text-[#E5E7EB]">
-                  <Bookmark size={18}></Bookmark> Save for later
-                </button>
-              </div>
+              <WorkoutActions workout={workoutData} />
             </div>
           </div>
         </div>

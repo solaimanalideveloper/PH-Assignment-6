@@ -1,8 +1,8 @@
 "use client";
 import { CalendarPlus, Bookmark } from "lucide-react";
-import toast from "react-hot-toast";
 import { usePlan } from "@/context/PlanContext";
 import React from "react";
+import { toast } from "react-toastify";
 
 const WorkoutActions = ({ workout }) => {
   const { addToPlan, addToSaved, planItems, savedItems } = usePlan();

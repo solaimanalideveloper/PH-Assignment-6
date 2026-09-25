@@ -11,7 +11,7 @@ const LibrarySection = ({ workoutCardData }) => {
         <p className="text-[#9CA3AF] mb-6">
           Twelve lifts covering every major muscle group.
         </p>
-        <div className="grid grid-cols-3 gap-8 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {workoutCardData.map((workout) => (
             <WorkoutCard key={workout.id} workoutData={workout}></WorkoutCard>
           ))}

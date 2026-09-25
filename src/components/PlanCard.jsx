@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import toast from "react-hot-toast";
 import { Clock, Flame, Star, Check, X } from "lucide-react";
 import { usePlan } from "@/context/PlanContext";
 import React from "react";
+import { toast } from "react-toastify";
 
 const PlanCard = ({ workout, listType }) => {
   const { removeFromPlan, removeFromSaved, markDone } = usePlan();
