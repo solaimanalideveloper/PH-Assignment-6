@@ -6,22 +6,22 @@ FitLog is a dark, no-nonsense workout tracking web app built with Next.js. Brows
 
 ## 🚀 Live Demo
 
-- **Live Link:** _[add your deployed Vercel/Netlify link here]_
-- **GitHub Repository:** _[add your repo link here]_
+- **Live Link: ** https://ph-assignment-6-tau.vercel.app
+- **GitHub Repository:** https://github.com/solaimanalideveloper/PH-Assignment-6
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Technology | Purpose |
-|---|---|
-| **Next.js (App Router)** | Framework, routing (`/`, `/workout/[id]`, `/my-plan`), Server Components for data fetching |
-| **React (Context API)** | Global state management for the plan/saved lists (`PlanContext`) |
-| **Tailwind CSS** | Styling and full responsive layout |
-| **react-hot-toast** | Toast notifications for user actions (add to plan, save, mark done, remove) |
-| **lucide-react** | Icon set (clock, flame, star, check, X, chevron, etc.) |
-| **localStorage** | Client-side persistence so the plan/saved lists survive page reloads |
-| **FitLog API** (`api.abcz.workers.dev`) | External REST API providing all workout data |
+| Technology                              | Purpose                                                                                    |
+| --------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Next.js (App Router)**                | Framework, routing (`/`, `/workout/[id]`, `/my-plan`), Server Components for data fetching |
+| **React (Context API)**                 | Global state management for the plan/saved lists (`PlanContext`)                           |
+| **Tailwind CSS**                        | Styling and full responsive layout                                                         |
+| **react-hot-toast**                     | Toast notifications for user actions (add to plan, save, mark done, remove)                |
+| **lucide-react**                        | Icon set (clock, flame, star, check, X, chevron, etc.)                                     |
+| **localStorage**                        | Client-side persistence so the plan/saved lists survive page reloads                       |
+| **FitLog API** (`api.abcz.workers.dev`) | External REST API providing all workout data                                               |
 
 ---
 
