@@ -3,7 +3,7 @@
 import { ChevronDown, Check } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { usePlan } from "@/context/PlanContext"; // 🆕
+import { usePlan } from "@/context/PlanContext";
 import PlanCard from "@/components/PlanCard";
 
 const MyPlanPage = () => {

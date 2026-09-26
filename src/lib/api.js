@@ -1,4 +1,3 @@
-// 'use client'
 // new // https://api.api-store.workers.dev/api/fitlog
 
 // old // https://api.abcz.workers.dev/api/fitlog
