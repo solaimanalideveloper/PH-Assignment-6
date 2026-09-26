@@ -1,3 +1,4 @@
+// 'use client'
 export const getAllWorkouts = async () => {
   try {
     const res = await fetch("https://api.abcz.workers.dev/api/fitlog", {
@@ -11,9 +12,10 @@ export const getAllWorkouts = async () => {
   }
 };
 
-export const getWorkoutById = async () => {
+export const getWorkoutById = async (id) => {
+  // const { id } = await params;
   try {
-    const res = await fetch(`"https://api.abcz.workers.dev/api/fitlog"/${id}`, {
+    const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`, {
       cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch workout");

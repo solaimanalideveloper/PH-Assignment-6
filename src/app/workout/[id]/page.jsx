@@ -1,12 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import WorkoutActions from "@/components/WorkoutActions";
+import { getWorkoutById } from "@/lib/api";
 
 const WorkoutDetailPage = async ({ params }) => {
   const { id } = await params;
-
-  const res = await fetch(`https://api.abcz.workers.dev/api/fitlog/${id}`);
-  const workoutData = await res.json();
+  const workoutData = await getWorkoutById(id);
 
   const {
     name,

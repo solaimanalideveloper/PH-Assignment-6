@@ -16,15 +16,15 @@ const MyPlanPage = () => {
   const currentList = activeTab === "today" ? planItems : savedItems;
 
   const metrics = [
-    { label: "Exercises", value: planItems.length, highlight: true },
+    { label: "Exercises", value: currentList.length, highlight: true },
     {
       label: "Minutes",
-      value: planItems.reduce((sum, w) => sum + Number(w.duration), 0),
+      value: currentList.reduce((sum, w) => sum + Number(w.duration), 0),
       highlight: false,
     },
     {
       label: "Calories",
-      value: planItems.reduce((sum, w) => sum + Number(w.caloriesBurned), 0),
+      value: currentList.reduce((sum, w) => sum + Number(w.caloriesBurned), 0),
       highlight: false,
     },
   ];
