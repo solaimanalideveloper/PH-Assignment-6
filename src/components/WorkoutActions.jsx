@@ -34,13 +34,13 @@ const WorkoutActions = ({ workout }) => {
       <button
         onClick={handleAddToPlan}
         disabled={planItems.length >= 5}
-        className="flex items-center gap-2 bg-[#ccff00] text-black px-6 py-3 rounded-full font-bold disabled:opacity-40"
+        className="flex items-center gap-2 bg-[#ccff00] text-black px-6 py-3 rounded-full font-bold disabled:opacity-40 cursor-pointer"
       >
         <CalendarPlus size={18} /> Add to today`s plan
       </button>
       <button
         onClick={handleSave}
-        className="flex items-center gap-2 border border-[#2A2A2A] text-white px-6 py-3 rounded-full font-bold"
+        className="flex items-center gap-2 border border-[#2A2A2A] text-white px-6 py-3 rounded-full font-bold cursor-pointer"
       >
         <Bookmark size={18} /> Save for later
       </button>

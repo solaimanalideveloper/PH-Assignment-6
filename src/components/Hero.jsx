@@ -16,7 +16,7 @@ const Hero = () => {
             <br />
             into today`s plan, and watch the week`s work add up.
           </p>
-          <button className="border rounded-2xl bg-[#C2F800] px-6 py-4 text-[#000000] font-semibold mt-6">
+          <button className="border rounded-2xl bg-[#C2F800] px-6 py-4 text-[#000000] font-semibold mt-6 cursor-pointer">
             BROWSE WORKOUTS
           </button>
         </div>
@@ -24,8 +24,8 @@ const Hero = () => {
           <Image
             src={HeroImage}
             alt="Hero section Image"
-            width={350}
-            height={400}
+            width={400}
+            height={500}
           ></Image>
         </div>
       </div>

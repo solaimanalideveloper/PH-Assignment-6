@@ -48,7 +48,6 @@ const MyPlanPage = () => {
           Cap of five lifts for today. Finish them, then load more.
         </p>
 
-        {/* Metrics */}
         <div className="flex justify-between bg-[#232732] py-5 px-8 rounded-lg mt-8">
           {metrics.map((metric) => (
             <div key={metric.label}>
@@ -64,12 +63,11 @@ const MyPlanPage = () => {
           ))}
         </div>
 
-        {/* Tabs + Sort */}
         <div className="flex justify-between items-center mt-8">
           <div className="flex bg-[#1A1F2B] rounded-full p-1">
             <button
               onClick={() => setActiveTab("today")}
-              className={`px-5 py-2 rounded-full text-sm font-medium ${
+              className={`px-5 py-2 rounded-full text-sm font-medium cursor-pointer ${
                 activeTab === "today"
                   ? "bg-[#2A2F3B] text-white font-bold"
                   : "text-[#8A92A0]"
@@ -79,7 +77,7 @@ const MyPlanPage = () => {
             </button>
             <button
               onClick={() => setActiveTab("saved")}
-              className={`px-5 py-2 rounded-full text-sm font-medium ${
+              className={`px-5 py-2 rounded-full text-sm font-medium cursor-pointer ${
                 activeTab === "saved"
                   ? "bg-[#2A2F3B] text-white font-bold"
                   : "text-[#8A92A0]"
@@ -93,7 +91,7 @@ const MyPlanPage = () => {
             <span>Sort By</span>
             <button
               onClick={() => setSortOpen(!sortOpen)}
-              className="flex items-center gap-2 border border-[#2A2A2A] rounded-md px-3 py-1.5 text-white min-w-30 justify-between"
+              className="flex items-center gap-2 border border-[#2A2A2A] rounded-md px-3 py-1.5 text-white min-w-30 justify-between cursor-pointer"
             >
               {sortBy}
               <ChevronDown
@@ -113,7 +111,7 @@ const MyPlanPage = () => {
                       setSortBy(option);
                       setSortOpen(false);
                     }}
-                    className="flex items-center justify-between w-full px-4 py-2.5 text-left text-white hover:bg-[#2A2F3B]"
+                    className="flex items-center justify-between w-full px-4 py-2.5 text-left text-white hover:bg-[#2A2F3B] cursor-pointer"
                   >
                     {option}
                     {sortBy === option && (
@@ -126,7 +124,6 @@ const MyPlanPage = () => {
           </div>
         </div>
 
-        {/* Empty state */}
         {sortedList.length === 0 ? (
           <div className="text-center py-16">
             <h2 className="text-white text-2xl font-bold">NOTHING HERE YET</h2>
